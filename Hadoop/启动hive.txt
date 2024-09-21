@@ -1,0 +1,16 @@
+启动HDFS和YARN
+start-all.sh   
+
+后台启动元数据服务
+Nohup /export/server/apache-hive-3.1.2-bin/hive –service metastore &  
+
+后台启动hiveserver2服务（为了beeline连接）
+Nohup /export/server/apache-hive-3.1.2-bin/hive –service hiveserver2 &  
+
+启动beeline
+./beeline
+
+在beeline中连接(用户 root 密码 无)
+! connect jdbc:hive2://node1:10000
+
+
